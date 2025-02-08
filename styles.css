@@ -69,25 +69,61 @@ body {
 }
 
 button[aria-expanded="true"] + #menuContent {
-    display: block;
+    display: list-item;
 }
 
-/* Existing Styles */
-
-/* For new hidden menu */
-.menu-content {
-    display: none;
-    background-color: #222;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 10px;
-    width: 200px;
+.menu-button {
+    background-color: #ff4500; /* Reddish button */
     color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-#menuToggle[aria-expanded="true"] + .menu-content {
+.menu-button:hover {
+    background-color: #e03e00; /* Darker red on hover */
+}
+
+/* Dropdown menu styling */
+.menu-content {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: #222;
+    color: white;
+    width: 180px;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+}
+
+/* Make the menu list look clean */
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-content li {
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-content a {
+    text-decoration: none;
+    color: white;
     display: block;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.menu-content a:hover {
+    background: #333;
+    border-radius: 5px;
 }
 
 .nav-links {
@@ -100,11 +136,12 @@ button[aria-expanded="true"] + #menuContent {
 
 .nav-links li {
     list-style: none;
+    display: inline-block;
+    margin: 0 20px;
 }
 
 .nav-links li a {
     padding: 12px 20px;
-    background-color: #333;
     color: white;
     text-decoration: none;
     font-size: 18px;
